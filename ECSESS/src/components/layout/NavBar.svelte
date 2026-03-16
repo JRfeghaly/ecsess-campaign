@@ -1,74 +1,67 @@
-<script>
-	import NavButton from './NavButton.svelte';
-	import ECSESS from 'assets/ECSESS.png';
+<script lang="ts">
+	import { page } from '$app/state';
 	import { Menu } from '@lucide/svelte';
 	import { slide } from 'svelte/transition';
+	import { campaignSite } from '$lib/campaign-content';
+
 	let menuHidden = $state(true);
 
-	const announcementIntro = 'ECSESS Election: Nomination period is happening! See more info: ';
-	const announcementLinkUrl = 'https://ecsess.mcgilleus.ca/join';
-	const announcementLinkText = 'ecsess.mcgilleus.ca/join';
+	const closeMenu = () => {
+		menuHidden = true;
+	};
+
+	const linkClass = (href: string) =>
+		page.url.pathname === href
+			? 'border-ecsess-200 text-ecsess-50 bg-ecsess-800/70'
+			: 'border-transparent text-ecsess-200 hover:border-ecsess-400 hover:text-ecsess-50 hover:bg-ecsess-900/60';
 </script>
 
-<div class="sticky top-0 z-40 w-full">
-	<nav class="bg-ecsess-black text-ecsess-100 w-full py-1">
-		<!-- Small screens -->
-		<div class="block md:hidden">
-			<div class="mx-4 flex items-center-safe justify-between">
-				<a href="/">
-					<img src={ECSESS} alt="ECSESS Logo" class="w-20 p-2" />
-				</a>
+<div class="sticky top-0 z-40 w-full border-b border-ecsess-800/90 bg-ecsess-black/95 backdrop-blur-md">
+	<nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+		<a
+			href="/"
+			class="text-ecsess-50 max-w-[16rem] text-sm leading-tight font-extrabold tracking-[0.08em] uppercase md:max-w-none md:text-base"
+		>
+			{campaignSite.brandText}
+		</a>
 
-				<button
-					type="button"
-					class="bg-ecsess-black-hover hover:bg-ecsess-800 active:bg-ecsess-900 grid size-10 place-items-center rounded-md transition-colors ease-in-out"
-					onclick={() => {
-						menuHidden = !menuHidden;
-					}}
+		<button
+			type="button"
+			class="bg-ecsess-black-hover hover:bg-ecsess-800 active:bg-ecsess-900 grid size-10 place-items-center rounded-md transition-colors md:hidden"
+			onclick={() => {
+				menuHidden = !menuHidden;
+			}}
+			aria-label="Toggle navigation"
+		>
+			<Menu class="size-6" />
+		</button>
+
+		<div class="hidden items-center gap-2 md:flex">
+			{#each campaignSite.navItems as item}
+				<a
+					href={item.href}
+					class={`rounded-full border px-4 py-2 text-sm font-semibold transition-all ${linkClass(item.href)}`}
 				>
-					<Menu class="size-6 transition-transform duration-300 ease-in-out" />
-				</button>
-			</div>
-
-			{#if !menuHidden}
-				<div
-					class="bg-ecsess-900 border-ecsess-700 mx-2 mb-2 flex w-auto flex-col gap-1 rounded-lg border-2 px-2 py-2 shadow-lg"
-					transition:slide
-				>
-					<NavButton href="/">Home</NavButton>
-					<NavButton href="/council">Meet the council</NavButton>
-					<NavButton href="/events">Events</NavButton>
-					<NavButton href="/resources">Resources</NavButton>
-					<NavButton href="/devteam">Dev Team</NavButton>
-					<NavButton href="/join">Join ECSESS</NavButton>
-				</div>
-			{/if}
-		</div>
-
-		<!-- Medium and larger screens -->
-		<div class="hidden md:block">
-			<div class="flex place-content-center items-end">
-				<a href="/">
-					<img src={ECSESS} alt="ECSESS Logo" class="h-12 p-2" />
+					{item.label}
 				</a>
-				<NavButton href="/">Home</NavButton>
-				<NavButton href="/council">Meet the council</NavButton>
-				<NavButton href="/events">Events</NavButton>
-				<NavButton href="/resources">Resources</NavButton>
-				<NavButton href="/devteam">Dev Team</NavButton>
-				<NavButton href="/join">Join ECSESS</NavButton>
-			</div>
+			{/each}
 		</div>
 	</nav>
-	<!-- Small announcement underneath navbar -->
-	<div class="border-ecsess-black bg-ecsess-800 border-b px-4 py-2 shadow-sm" role="alert">
-		<p class="text-ecsess-100 text-center text-sm font-medium md:text-base">
-			{announcementIntro}<a
-				href={announcementLinkUrl}
-				class="text-ecsess-50 decoration-ecsess-400 hover:decoration-ecsess-300 underline underline-offset-2"
-			>
-				{announcementLinkText}
-			</a>
-		</p>
-	</div>
+
+	{#if !menuHidden}
+		<div
+			class="border-ecsess-800 bg-ecsess-950 mx-3 mb-3 flex flex-col gap-2 rounded-2xl border p-3 shadow-xl md:hidden"
+			transition:slide
+		>
+			{#each campaignSite.navItems as item}
+				<a
+					href={item.href}
+					class={`rounded-xl border px-4 py-3 text-sm font-semibold transition-all ${linkClass(item.href)}`}
+					onclick={closeMenu}
+				>
+					{item.label}
+				</a>
+			{/each}
+		</div>
+	{/if}
 </div>

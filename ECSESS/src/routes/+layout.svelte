@@ -4,9 +4,8 @@
 	import { onMount } from 'svelte';
 	import Navbar from 'components/layout/NavBar.svelte';
 	import Footer from 'components/layout/Footer.svelte';
-	import PageThumbnail from 'components/layout/PageThumbnail.svelte';
 
-	let { children, data } = $props();
+	let { children } = $props();
 	// Lazy load analytics only in production for faster dev startup
 	onMount(async () => {
 		if (!dev) {
@@ -17,6 +16,7 @@
 </script>
 
 <Navbar />
-<PageThumbnail thumbnail={data.thumbnail} />
-{@render children()}
+<main class="bg-ecsess-950 min-h-screen">
+	{@render children()}
+</main>
 <Footer />

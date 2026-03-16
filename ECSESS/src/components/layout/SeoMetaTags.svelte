@@ -1,7 +1,7 @@
 <script>
 	let {
-		title = "Electrical, Computer & Software Engineering Students' Society at McGill - ECSESS",
-		description = 'Meet the student council, get access to academic and technical resources, registration for events, and much more!',
+		title = 'Joseph for ECSESS President',
+		description = "Explore Joseph's campaign for ECSESS President, including his background, platform, achievements, and poster.",
 		canonical = 'https://ecsess.mcgilleus.ca'
 	} = $props();
 </script>

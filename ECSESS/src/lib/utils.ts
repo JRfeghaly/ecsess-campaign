@@ -1,9 +1,17 @@
 import { createClient } from '@sanity/client';
-import { SANITY_ID } from '$env/static/private';
+import { env } from '$env/dynamic/private';
+
+const sanityProjectId = env.SANITY_ID ?? env.SANITY_PROJECT_ID;
+
+if (!sanityProjectId) {
+	throw new Error(
+		'Missing Sanity project ID. Set SANITY_ID (or SANITY_PROJECT_ID) in your .env file.'
+	);
+}
 
 const client = createClient({
-	projectId: SANITY_ID,
-	dataset: 'production',
+	projectId: sanityProjectId,
+	dataset: env.SANITY_DATASET ?? 'production',
 	useCdn: true,
 	apiVersion: '2025-02-06'
 });

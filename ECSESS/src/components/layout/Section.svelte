@@ -12,21 +12,22 @@
 		via = '',
 		direction = 'to-b', // to bottom
 		black = false,
-		contentStart = false
+		contentStart = false,
+		fullHeight = true
 	} = $props();
 
-	const base =
-		'mx-auto flex min-h-[90vh] flex-col items-center gap-4 p-4 text-center text-ecsess-100';
+	const base = 'mx-auto flex flex-col items-center gap-4 p-4 text-center text-ecsess-100';
 
 	let tailwindClasses = $state(base);
 
 	$effect(() => {
 		const justifyClass = contentStart ? 'justify-start' : 'justify-center';
-		const withJustify = `${base} ${justifyClass}`;
+		const heightClass = fullHeight ? 'min-h-[90vh]' : '';
+		const layoutClasses = `${base} ${heightClass} ${justifyClass}`.trim();
 		if (from && to) {
-			tailwindClasses = `${withJustify} bg-gradient-${direction} ${from} ${to} ${via}`;
+			tailwindClasses = `${layoutClasses} bg-gradient-${direction} ${from} ${to} ${via}`;
 		} else {
-			tailwindClasses = withJustify + (black ? ' bg-ecsess-black' : ' bg-ecsess-800');
+			tailwindClasses = layoutClasses + (black ? ' bg-ecsess-black' : ' bg-ecsess-800');
 		}
 	});
 </script>
