@@ -369,7 +369,7 @@ export const campaignSite: CampaignSiteContent = {
 	poster: {
 		title: 'Poster',
 		description:
-			'This space is reserved for the final campaign poster. Once the Canva export is ready, it can be dropped into the site without changing the page layout.',
+			'Take a look at my campaign poster and keep it handy for election season 📣',
 		assetPath: null,
 		alt: 'Joseph campaign poster placeholder',
 		callout: 'Final Canva poster coming soon.'

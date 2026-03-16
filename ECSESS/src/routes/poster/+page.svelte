@@ -6,6 +6,7 @@
 	let { data } = $props();
 
 	const { poster } = campaignSite;
+	const downloadName = 'joseph-ecsess-poster';
 </script>
 
 <SeoMetaTags
@@ -30,20 +31,36 @@
 					{#if poster.assetPath}
 						<div class="w-full">
 							<img src={poster.assetPath} alt={poster.alt} class="h-full w-full rounded-[1.25rem] object-cover" />
-							<a
-								href={poster.assetPath}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="text-ecsess-50 bg-ecsess-600 hover:bg-ecsess-500 mt-4 inline-flex rounded-full px-5 py-3 text-sm font-bold tracking-[0.16em] uppercase transition-colors"
-							>
-								Open full poster
-							</a>
+							<div class="mt-4 flex flex-wrap justify-center gap-3">
+								<a
+									href={poster.assetPath}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="text-ecsess-50 bg-ecsess-600 hover:bg-ecsess-500 inline-flex rounded-full px-5 py-3 text-sm font-bold tracking-[0.16em] uppercase transition-colors"
+								>
+									Open poster
+								</a>
+								<a
+									href={poster.assetPath}
+									download={downloadName}
+									class="border-ecsess-500/70 text-ecsess-50 hover:bg-ecsess-900/70 inline-flex rounded-full border px-5 py-3 text-sm font-bold tracking-[0.16em] uppercase transition-colors"
+								>
+									Download poster
+								</a>
+							</div>
 						</div>
 					{:else}
 						<div>
 							<p class="text-ecsess-300 text-xs font-bold tracking-[0.24em] uppercase">Poster placeholder</p>
 							<h2 class="text-ecsess-50 mt-3 text-3xl font-black">Canva export pending</h2>
 							<p class="text-ecsess-200 mt-4 leading-7">{poster.callout}</p>
+							<button
+								type="button"
+								disabled
+								class="border-ecsess-700 text-ecsess-300 mt-6 inline-flex cursor-not-allowed rounded-full border px-5 py-3 text-sm font-bold tracking-[0.16em] uppercase opacity-70"
+							>
+								Download available soon
+							</button>
 						</div>
 					{/if}
 				</div>
