@@ -348,9 +348,9 @@ export const campaignSite: CampaignSiteContent = {
 				summary:
 					'ECSESS should do more to represent the many different groups that make up our department. I want to make sure more students feel included, heard, and reflected in the decisions, events, and initiatives of the society. 💚',
 				bullets: [
-					'Take more initiative to represent students from all groups within the department. 🌍',
-					'Encourage broader outreach to students with different backgrounds, interests, and experiences. 📣',
-					'Build a society that feels more inclusive and connected to the full ECSE community. ⚡'
+					'Take more initiative to represent students from all groups within the department by highlighting student initiatives and important events through ECSESS communication channels and social media. 🌍',
+					'Encourage broader outreach to students with different backgrounds, interests, and experiences by promoting events and milestones that matter to members of our community, such as recognizing women in ECSE during International Women\'s Day. 📣',
+					'Build a society that feels more inclusive and connected to the full ECSE community by sharing information about resources and initiatives that support students, such as prayer spaces and community events during Ramadan in Building around campus. ⚡'
 				]
 			},
 			{
