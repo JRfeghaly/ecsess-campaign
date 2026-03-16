@@ -378,8 +378,8 @@ export const campaignSite: CampaignSiteContent = {
 		title: 'Joseph for ECSESS President',
 		description: '',
 		contactLabel: 'Contact',
-		contactValue: '@Joseph_4_ecsess_president',
-		contactHref: '#',
+		contactValue: '@Joseph_for_ecsess_president',
+		contactHref: 'https://www.instagram.com/joseph_for_ecsess_president?igsh=MTkzM3FuNXFvNWhlcw%3D%3D&utm_source=qr',
 		emailValue: 'joseph.rouhanafeghaly@mail.mcgill.ca',
 		emailHref: 'mailto:joseph.rouhanafeghaly@mail.mcgill.ca',
 		status: ''
