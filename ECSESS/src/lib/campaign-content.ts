@@ -370,7 +370,7 @@ export const campaignSite: CampaignSiteContent = {
 		title: 'Poster',
 		description:
 			'Take a look at my campaign poster and keep it handy for election season 📣',
-		assetPath: null,
+		assetPath: '/poster.png',
 		alt: 'Joseph campaign poster placeholder',
 		callout: 'Final Canva poster coming soon.'
 	},
