@@ -228,7 +228,8 @@ export const campaignSite: CampaignSiteContent = {
 					{
 						role: 'The Factory General Manager',
 						description: 'Description and accomplishments for this role will go here.',
-						imageLabel: 'Upload The Factory photo here'
+						imageLabel: 'Upload The Factory photo here',
+					imagePath: '/factory.png'
 					}
 				]
 			},
