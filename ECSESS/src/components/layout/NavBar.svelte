@@ -33,7 +33,7 @@
 			}}
 			aria-label="Toggle navigation"
 		>
-			<Menu class="size-6" />
+			<Menu class="text-white size-6" />
 		</button>
 
 		<div class="hidden items-center gap-2 md:flex">

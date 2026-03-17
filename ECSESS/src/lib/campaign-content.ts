@@ -309,12 +309,12 @@ export const campaignSite: CampaignSiteContent = {
 				]
 			},
 			{
-				title: 'A More Relevant Software Curriculum 💻',
+				title: 'A More Relevant ECSE Curriculum 💻',
 				accent: 'Reform',
 				summary:
-					'There have been ongoing calls to redefine the Software Engineering program so it better reflects students’ needs and modern industry expectations. That process has already begun, with changes such as making the fourth co-op optional and allowing students to replace it with a technical complementary course, but there is still more work to do to ensure the program feels relevant, practical, and well-structured.',
+					'There have been ongoing calls to redefine the ECSE programs so it better reflects students’ needs and modern industry expectations. That process has already begun, with changes such as making the fourth co-op optional for Software Students and allowing students to replace it with a technical complementary course, but there is still more work to do to ensure the program feels relevant, practical, and well-structured.',
 				bullets: [
-					'Advocate for a review of the Software Engineering curriculum so that redundant classes such as ECSE 428, 429 are removed.',
+					'Advocate for a review of the ECSE curriculum so that redundant classes such as ECSE 428, 429 are removed.',
 					'Push for more practical content such as DevOps, Docker, testing, and software delivery (ECSE 437 for example).',
 					'Promote more data-focused and industry-relevant course options.'
 				]
