@@ -357,7 +357,7 @@ export const campaignSite: CampaignSiteContent = {
 				title: 'Stronger Community Connections 🔗',
 				accent: 'Momentum',
 				summary:
-					'I want to better connect ECSESS with the wider ECSE community and its subcommittees. By creating stronger links with groups such as To Bits, IEEE, CodeJam, and The Factory, we can better share events, improve outreach, and make the department feel more connected as a whole. 💚',
+					'I want to better connect ECSESS with the wider ECSE community and its subcommittees. By creating stronger links with groups such as ECSESS Bits, IEEE, CodeJam, and The Factory, we can better share events, improve outreach, and make the department feel more connected as a whole. 💚',
 				bullets: [
 					'Create a shared Slack space connecting ECSESS with groups such as Bits, IEEE, CodeJam, and The Factory to better propagate events and initiatives. 💬',
 					'Strengthen communication between ECSESS and its subcommittees so that opportunities are shared more widely across the department. 📣',
